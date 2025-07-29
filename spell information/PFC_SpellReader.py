@@ -1,5 +1,8 @@
 '''
     This was made By Macarkeys here https://github.com/Macarkeys/PFC_SpellReader/tree/main and was updated by Me
+
+    install extensions:
+    pip install python-docx
 '''
 
 ''' What needs to be done:
@@ -110,3 +113,9 @@ if __name__ == "__main__":
   #print(docSpellDict['Hate']['10 – Malevolence']) # currently an issue is present where – is present in spell names not -. They may look similiar but not the same
   with open('pfc-elemental-divine-psionic-spells.json', 'w') as outfile:
     json.dump(allSpells, outfile, indent=4)
+
+    # Splits the spell name into its components of level and actual name, currently not used
+def splitSpellName(docSpellName):
+    level = docSpellName[0:docSpellName.index(' ')]
+    name = docSpellName[docSpellName.index(' ',docSpellName.index(' ') + 1)+1:]
+    return level, name
