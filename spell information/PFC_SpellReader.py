@@ -115,7 +115,7 @@ if __name__ == "__main__":
     json.dump(allSpells, outfile, indent=4)
 
     # Splits the spell name into its components of level and actual name, currently not used
-def splitSpellName(docSpellName):
+  def splitSpellName(docSpellName):
     level = docSpellName[0:docSpellName.index(' ')]
     name = docSpellName[docSpellName.index(' ',docSpellName.index(' ') + 1)+1:]
     return level, name
