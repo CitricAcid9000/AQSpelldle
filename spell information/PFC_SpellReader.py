@@ -9,6 +9,9 @@
 global DeferNumberCounter
 DeferNumberCounter = 0 
 
+global spellcount
+spellcount = 0
+
 # combines paragraphs from a list of paragraphs
 def collatPara(paragraphList):
   strPara = ''
@@ -137,6 +140,8 @@ def getSpellDicts(SpellTable, spellGroupName=None):
     # Extract level and clean name from the spell title
     full_spell_name = SpellTable[0][i[0]]
     level, clean_spell_name = extractLevelAndName(full_spell_name)
+    global spellcount
+    spellcount += 1
     
     # Add level to the spell dictionary if extracted successfully
     if level is not None:
@@ -210,3 +215,5 @@ if __name__ == "__main__":
   # Access pattern: allSpells['Concern']['Level'] and allSpells['Concern']['Spell Group']
   with open('spell information/pfc-elemental-divine-psionic-spells.json', 'w') as outfile:
     json.dump(allSpells, indent=4, fp=outfile)
+
+    print(f"Total Spells Processed: {spellcount}")
