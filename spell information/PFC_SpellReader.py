@@ -5,9 +5,6 @@
     pip install python-docx
 '''
 
-''' What needs to be done:
-1. fix spell groups like Defer(divine) which are extremley short spell groups that break the current code
-'''
 # I have this because of how inconsistant the AQ spell format is
 global DeferNumberCounter
 DeferNumberCounter = 0 
