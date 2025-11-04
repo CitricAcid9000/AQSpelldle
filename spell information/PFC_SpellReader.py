@@ -106,12 +106,12 @@ if __name__ == "__main__":
   import os
   #opening the document as a docx.Document object
   allSpells = {}
-  for file in os.listdir('spellFolder'):
-    docSpell = getDocsSpells(Document("spellFolder\\"+file))
+  for file in os.listdir('spell information\spellFolder'):
+    docSpell = getDocsSpells(Document("spell information\spellFolder\\"+file))
     allSpells[docSpell[1]] = docSpell[0]
   # next steps is to do this for every spell document and make sure there is no errors then combine them into a big dictionary so bigDict['Orus']['Love']['1 - Concern'] (- not –)
   #print(docSpellDict['Hate']['10 – Malevolence']) # currently an issue is present where – is present in spell names not -. They may look similiar but not the same
-  with open('pfc-elemental-divine-psionic-spells.json', 'w') as outfile:
+  with open('spell information/pfc-elemental-divine-psionic-spells.json', 'w') as outfile:
     json.dump(allSpells, outfile, indent=4)
 
     # Splits the spell name into its components of level and actual name, currently not used
